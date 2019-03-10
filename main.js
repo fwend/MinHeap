@@ -83,6 +83,11 @@ class MinHeap {
         } else throw "index out of bounds";
     }
 
+    delete(i) {
+        this.decreaseKey(i, Number.NEGATIVE_INFINITY);
+        this.extractMin();
+    }     
+
     swap(i, j) {
         const tmp = this.tree[i];
         this.tree[i] = this.tree[j];
